@@ -25,7 +25,8 @@ pipeline {
 	stage ("Publish Code Coverage") {
             steps{
 				echo "Publish code coverage"
-				cobertura coberturaReportFile: 'coverage.xml'
+				//cobertura coberturaReportFile: 'coverage.xml'
+				recordCoverage(tools: [[parser: 'COBERTURA', pattern: 'coverage.xml']])
             }
         }
     }
